@@ -1,0 +1,109 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Swagger Challage Fecha",
+        "description": "Api Swagger para mostrar los 3 EndPoind de FECHA Y HORA",
+        "termsOfService": "https://github.com/loxi1/micro_challenge_exp",
+        "contact": {
+            "name": "Loxi1"
+        },
+        "license": {
+            "name": "Uso educativo"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/what-time": {
+            "get": {
+                "tags": ["Time"],
+                "description": "Retornar la hora",
+                "operationId": "verHora",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/xml",
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "hora response",
+                        "schema": {
+                            "type": "array"
+                        },
+                        "examples": {
+                            "application/json": "{ success: true, message: 'Ok', response: 'I:M:S p'}"
+                        }
+                    },
+                    "default": {
+                        "description": "Formato de Hora: I:M:S p"
+                    }
+                }
+            }
+        },
+        "/what-date": {
+            "get": {
+                "tags": ["Date"],
+                "description": "Returnar fecha",
+                "operationId": "verFecha",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/xml",
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "fecha response",
+                        "schema": {
+                            "type": "array"
+                        },
+                        "examples": {
+                            "application/json": "{ success: true, message: 'Ok', response: 'YYYY-MM-DD'}"
+                        }
+                    },
+                    "default": {
+                        "description": "Formato de Fecha: YYYY-MM-DD"
+                    }
+                }
+            }
+        },
+        "/what-date-time": {
+            "get": {
+                "tags": ["Date_Time"],
+                "description": "Returnar fecha y hora actual",
+                "operationId": "verFechaHora",
+                "produces": [
+                    "application/json",
+                    "application/xml",
+                    "text/xml",
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fecha y hora response",
+                        "schema": {
+                            "type": "array"
+                        },
+                        "examples": {
+                            "application/json": "{ success: true, message: 'Ok', response: 'YYYY-MM-DD I:M:S p'}"
+                        }
+                    },
+                    "default": {
+                        "description": "Formato de fecha y hora: YYYY-MM-DD I:M:S p"
+                    }
+                }
+            }
+        }
+    }
+}
